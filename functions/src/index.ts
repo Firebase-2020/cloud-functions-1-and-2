@@ -13,10 +13,43 @@ admin.initializeApp();
 //  response.send("Hello Firebase!");
 // });
 
+export const getBostonAreaWeather = 
+functions.https.onRequest((request, response) => {
+    admin.firestore().doc("areas/greater-boston").get()
+    .then(areaSnapShot => {
+        const cities = areaSnapShot.data()!.cities;
+        console.log('cities', cities);
+        
+        const promises = []
+            for (const city in cities) {
+                console.log('city', city);
+                
+                const p = admin.firestore().doc(`cities-weather/${city}`).get()
+                console.log('p', p);
+                
+                promises.push(p)
+            }
+            return Promise.all(promises)
+    })
+    .then(citySnapshots => {
+        const results = [] 
+        citySnapshots.forEach(citySnap => {
+            const data = citySnap.data()
+            data.city = citySnap.id;
+            results.push(data)
+        }) 
+        response.send(results)
+    })
+    .catch((error) => {
+        console.log(error)
+        response.status(500).send(error)
+    });
+})
+
 // This function fires when a change happens 
 // in the weather-cities... document
 export const onBostonWeatherUpdate =
-functions.firestore.document('cities-weather/boston-ma-us')
+functions.firestore.document("cities-weather/boston-ma-us")
 .onUpdate(change => {
     // the change parameter has two properties
     // "for" and "after"
@@ -50,7 +83,7 @@ export const getBostonWeather = functions.https.onRequest((request, response) =>
 	// get() returns a promise
 	admin
 		.firestore()
-		.doc('cities-weather/boston-ma-us')
+		.doc("cities-weather/boston-ma-us")
 		.get()
 		// The then() also returns a promise
 		.then((snapshop) => {

@@ -87,6 +87,11 @@ the change in the cities-weather document. Like this the app stays always up to 
 ### lecture 4
 - Learn JavaScript Promises (Pt 3) for sequential and parallel work in Cloud Functions - Firecasts
 
+Cloud Functions for Firebase → https://goo.gl/GfavtU
+Write HTTP Triggers → https://goo.gl/yA7bW9
+Functions SDK API documentation → https://goo.gl/oTiDh6
+Admin SDK documentation → https://goo.gl/n5YN5b
+
 
 
 
