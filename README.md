@@ -92,7 +92,11 @@ Write HTTP Triggers → https://goo.gl/yA7bW9
 Functions SDK API documentation → https://goo.gl/oTiDh6
 Admin SDK documentation → https://goo.gl/n5YN5b
 
+### lecture 5
+- How does async/await work with TypeScript and ECMAScript 2017? - Firecasts
 
+### lecture 6
+- Use async/await with TypeScript in Cloud Functions for Firebase - Firecasts
 
 
 
