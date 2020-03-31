@@ -102,7 +102,7 @@ Admin SDK documentation → https://goo.gl/n5YN5b
 - Realtime Database triggers (pt. 1) with Cloud Functions for Firebase - Firecasts
 
 ### lecture 7
-- In this lecture we use cloud functions with a Real Time Database. There could be a way to have two different firebase accounts in one app, but we skip that for now. So we created another firebase account and another app to follow the next lectures. Check the code for lecture 7 etc in an other repo named `cloud-functions-2-RTDatabase`. 
+- In this lecture we use cloud functions with a Real Time Database. There could be a way to have two different firebase accounts in one app, but we skip that for now. So we created another firebase account and another app to follow the next lectures. Check the code for lecture 7 etc in an other repo named `cloud-functions-2-firecasts-RTDatabase`. 
 
 
 
