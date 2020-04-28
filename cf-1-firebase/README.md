@@ -36,7 +36,33 @@ Project on Firebase:
 * Using TSLint with TypeScript → https://goo.gl/gg65KD
 
 * Cloud Functions for Firebase - Tutorials → http://bit.ly/2M2ZBcE
-* Subscribe to the Firebase channel → http://bit.ly/firebase2
+* Subscribe to the Firebase channel → http://bit.ly/
+
+* Check also on the video comments the way to run cloud functions on a local host
+When I try on localhost I get an empty object { }. But it works fine if I deploy it...
+
+- Learn to Code
+
+That's because you are not logged in and cannot read data from firebase database/cloud.
+You need  download the  json key and set it up in environments variables as it is described here: https://firebase.google.com/docs/functions/local-emulator#windows
+https://console.cloud.google.com/iam-admin/serviceaccounts
+
+
+@Learn to Code 
+
+Thanks a lot! It worked!
+
+I went to Google Cloud Platform I searched for 'App Engine default service account ', found the one for this project, selected it, created a key, downloaded in the functions folder, as JSON and then I run 
+
+$ export GOOGLE_APPLICATION_CREDENTIALS="path/to/key.json"
+
+$ firebase emulators:start
+
+To be honest it's the first time I run such a command (export GOOGLE_APPLICATION_CREDENTIALS="path/to/key.json")
+I thought export and paths where only used in js files...
+
+Anyway, thanks again!
+Wish you the best!
 ---
 
 ### lecture 2
@@ -66,7 +92,37 @@ Project on Firebase:
 * Admin SDK documentation → https://goo.gl/Ng9X6D
 
 * Cloud Functions for Firebase - Tutorials → http://bit.ly/2M2ZBcE
-* Subscribe to the Firebase channel → http://bit.ly/firebase2
+* Subscribe to the Firebase channel → http://bit.ly/
+
+- Check also on the video comments the way to run cloud functions on a local host
+
+
+Επισημασμένη απάντηση
+Learn to Code
+Πριν από 17 ώρες
+That's because you are not logged in and cannot read data from firebase database/cloud.
+You need  download the  json key and set it up in environments variables as it is described here: https://firebase.google.com/docs/functions/local-emulator#windows
+https://console.cloud.google.com/iam-admin/serviceaccounts
+
+1
+
+
+fooTios
+fooTios
+Πριν από 11 ώρες (τροποποιήθηκε)
+@Learn to Code 
+Thanks a lot! It worked!
+
+I went to Google Cloud Platform I searched for 'App Engine default service account ', found the one for this project, selected it, created a key, downloaded in the functions folder, as JSON and then I run 
+
+$ export GOOGLE_APPLICATION_CREDENTIALS="path/to/key.json"
+$ firebase emulators:start
+
+To be honest it's the first time I run such a command (export GOOGLE_APPLICATION_CREDENTIALS="path/to/key.json")
+I thought export and paths where only used in js files...
+
+Anyway, thanks again!
+Wish you the best!
 
 ### lecture 3
 - Learn JavaScript Promises (Pt. 2) with a Firestore Trigger in Cloud Functions - Firecasts
@@ -82,7 +138,37 @@ the change in the cities-weather document. Like this the app stays always up to 
 * Firebase Cloud Messaging → https://goo.gl/tSHqeb
 
 * Cloud Functions for Firebase - Tutorials → http://bit.ly/ 2M2ZBcE
-* Subscribe to the Firebase channel → http://bit.ly/firebase2
+* Subscribe to the Firebase channel → http://bit.ly/
+
+- Check also on the video comments the way to run cloud functions on a local host
+
+
+Επισημασμένη απάντηση
+Learn to Code
+Πριν από 17 ώρες
+That's because you are not logged in and cannot read data from firebase database/cloud.
+You need  download the  json key and set it up in environments variables as it is described here: https://firebase.google.com/docs/functions/local-emulator#windows
+https://console.cloud.google.com/iam-admin/serviceaccounts
+
+1
+
+
+fooTios
+fooTios
+Πριν από 11 ώρες (τροποποιήθηκε)
+@Learn to Code 
+Thanks a lot! It worked!
+
+I went to Google Cloud Platform I searched for 'App Engine default service account ', found the one for this project, selected it, created a key, downloaded in the functions folder, as JSON and then I run 
+
+$ export GOOGLE_APPLICATION_CREDENTIALS="path/to/key.json"
+$ firebase emulators:start
+
+To be honest it's the first time I run such a command (export GOOGLE_APPLICATION_CREDENTIALS="path/to/key.json")
+I thought export and paths where only used in js files...
+
+Anyway, thanks again!
+Wish you the best!
 
 ### lecture 4
 - Learn JavaScript Promises (Pt 3) for sequential and parallel work in Cloud Functions - Firecasts
@@ -102,7 +188,7 @@ Admin SDK documentation → https://goo.gl/n5YN5b
 - Realtime Database triggers (pt. 1) with Cloud Functions for Firebase - Firecasts
 
 ### lecture 7
-- In this lecture we use cloud functions with a Real Time Database. There could be a way to have two different firebase accounts in one app, but we skip that for now. So we created another firebase account and another app to follow the next lectures. Check the code for lecture 7 etc in an other repo named `cloud-functions-2-firecasts-RTDatabase`. 
+- Personal notes: In this lecture we use cloud functions with a Real Time Database. There could be a way to have two different firebase accounts in one app, but we skip that for now. So we created another firebase account and another app to follow the next lectures. Check the code for lecture 7 etc in an other repo named `cloud-functions-2-firecasts-RTDatabase`. 
 
 
 
