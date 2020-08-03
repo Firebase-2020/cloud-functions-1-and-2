@@ -1,4 +1,4 @@
-YouTube tutorial: 
+YouTube tutorial from the Official Firebase channel: 
 ### [Cloud Functions for Firebase - Tutorials](https://www.youtube.com/watch?v=DYfP-UIKxH0&list=PLl-K7zZEsYLkPZHe41m4jfAxUi0JjLgSM&index=1)
 
 Project on Firebase:
@@ -38,45 +38,19 @@ Project on Firebase:
 * Cloud Functions for Firebase - Tutorials → http://bit.ly/2M2ZBcE
 * Subscribe to the Firebase channel → http://bit.ly/
 
-* Check also on the video comments the way to run cloud functions on a local host
-When I try on localhost I get an empty object { }. But it works fine if I deploy it...
-
-- Learn to Code
-
-That's because you are not logged in and cannot read data from firebase database/cloud.
-You need  download the  json key and set it up in environments variables as it is described here: https://firebase.google.com/docs/functions/local-emulator#windows
-https://console.cloud.google.com/iam-admin/serviceaccounts
-
-
-@Learn to Code 
-
-Thanks a lot! It worked!
-
-I went to Google Cloud Platform I searched for 'App Engine default service account ', found the one for this project, selected it, created a key, downloaded in the functions folder, as JSON and then I run 
-
-$ export GOOGLE_APPLICATION_CREDENTIALS="path/to/key.json"
-
-$ firebase emulators:start
-
-To be honest it's the first time I run such a command (export GOOGLE_APPLICATION_CREDENTIALS="path/to/key.json")
-I thought export and paths where only used in js files...
-
-Anyway, thanks again!
-Wish you the best!
 ---
 
 ### lecture 2
 - Learn JavaScript Promises (Pt.1) with HTTP Triggers in Cloud Functions - Firecasts
 * The firebase " admin SDK " will return a promise when you ask it to do things like: 
-- Read or write from a database
-- Interact with files in Cloud Storage
-- Send a notification with Cloud Messaging
-- Update an authenticated user profile
+    - Read or write from a database.
+    - Interact with files in Cloud Storage.
+    - Send a notification with Cloud Messaging.
+    - Update an authenticated user profile.
 * You need to wait for the promise to return before you terminate your function.
 * Rules for terminating a Cloud Function:
-1. For HTTP triggers (functions): They are terminated after they send a response to the client, using the "response" object. So they send a response at the end.
-2. Background triggers (i.e. all other kind of triggers): You need to return a promise, that is finished, only after the work that was started in the function is fully complete. If there is no work to wait on, you can just return "null". But you can't leave any promises dunkling in your functions.
-
+    1. For HTTP triggers (functions): They are terminated after they send a response to the client, using the "response" object. So they send a response at the end.
+    2. Background triggers (i.e. all other kind of triggers): You need to return a promise, that is finished, only after the work that was started in the function is fully complete. If there is no work to wait on, you can just return "null". But you **can't** leave any promises dunkling in your functions.
 - You can test your code in a cloud function on your computer, before you deploy it.
 * To emulate HTTP kind functions, first you need to complile TypeScript to JavaScript. So go to terminal and run: " cd functions " then " npm run-script lint " to check for errors. Note: you need to .catch() errors other wise  you get an error from tslint: "Promises must be handled appropriately".
 * Then run: " npm run-script build " to compile TypeScript. This runs the 'build' command that is in the package.json, that " firebase init " set for me. It executes the TypeScript compiler or "tsc". The converted JavaScript appears in the "lib" folder next to "src".
@@ -94,28 +68,28 @@ Wish you the best!
 * Cloud Functions for Firebase - Tutorials → http://bit.ly/2M2ZBcE
 * Subscribe to the Firebase channel → http://bit.ly/
 
-- Check also on the video comments the way to run cloud functions on a local host
+
+* Check also on the video comments the way to run cloud functions on a local host.
 
 
-Επισημασμένη απάντηση
-Learn to Code
-Πριν από 17 ώρες
+Comments:
+- When I try on localhost I get an empty object { }. But it works fine if I deploy it...
+
+- Learn to Code
+
 That's because you are not logged in and cannot read data from firebase database/cloud.
-You need  download the  json key and set it up in environments variables as it is described here: https://firebase.google.com/docs/functions/local-emulator#windows
+You need to download the json key and set it up in environments variables as it is described here: https://firebase.google.com/docs/functions/local-emulator#windows
 https://console.cloud.google.com/iam-admin/serviceaccounts
 
-1
 
+- @Learn to Code 
 
-fooTios
-fooTios
-Πριν από 11 ώρες (τροποποιήθηκε)
-@Learn to Code 
 Thanks a lot! It worked!
 
 I went to Google Cloud Platform I searched for 'App Engine default service account ', found the one for this project, selected it, created a key, downloaded in the functions folder, as JSON and then I run 
 
 $ export GOOGLE_APPLICATION_CREDENTIALS="path/to/key.json"
+
 $ firebase emulators:start
 
 To be honest it's the first time I run such a command (export GOOGLE_APPLICATION_CREDENTIALS="path/to/key.json")
@@ -123,6 +97,10 @@ I thought export and paths where only used in js files...
 
 Anyway, thanks again!
 Wish you the best!
+
+- Learn to Code
+
+@fotios The "export" command it's used in bash to add a value to environment variables. For Windows is "set"
 
 ### lecture 3
 - Learn JavaScript Promises (Pt. 2) with a Firestore Trigger in Cloud Functions - Firecasts
@@ -140,35 +118,7 @@ the change in the cities-weather document. Like this the app stays always up to 
 * Cloud Functions for Firebase - Tutorials → http://bit.ly/ 2M2ZBcE
 * Subscribe to the Firebase channel → http://bit.ly/
 
-- Check also on the video comments the way to run cloud functions on a local host
 
-
-Επισημασμένη απάντηση
-Learn to Code
-Πριν από 17 ώρες
-That's because you are not logged in and cannot read data from firebase database/cloud.
-You need  download the  json key and set it up in environments variables as it is described here: https://firebase.google.com/docs/functions/local-emulator#windows
-https://console.cloud.google.com/iam-admin/serviceaccounts
-
-1
-
-
-fooTios
-fooTios
-Πριν από 11 ώρες (τροποποιήθηκε)
-@Learn to Code 
-Thanks a lot! It worked!
-
-I went to Google Cloud Platform I searched for 'App Engine default service account ', found the one for this project, selected it, created a key, downloaded in the functions folder, as JSON and then I run 
-
-$ export GOOGLE_APPLICATION_CREDENTIALS="path/to/key.json"
-$ firebase emulators:start
-
-To be honest it's the first time I run such a command (export GOOGLE_APPLICATION_CREDENTIALS="path/to/key.json")
-I thought export and paths where only used in js files...
-
-Anyway, thanks again!
-Wish you the best!
 
 ### lecture 4
 - Learn JavaScript Promises (Pt 3) for sequential and parallel work in Cloud Functions - Firecasts

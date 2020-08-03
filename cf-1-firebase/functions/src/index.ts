@@ -45,7 +45,8 @@ export const getBostonAreaWeather = functions.https.onRequest(async (request, re
 
 // This function fires when a change happens
 // in the weather-cities... document
-export const onBostonWeatherUpdate = functions.firestore.document('cities-weather/boston-ma-us').onUpdate((change) => {
+export const onBostonWeatherUpdate = 
+functions.firestore.document('cities-weather/boston-ma-us').onUpdate((change) => {
 	// the change parameter has two properties
 	// "for" and "after"
 	// data(): converts the document to a js obj.
@@ -68,7 +69,8 @@ export const onBostonWeatherUpdate = functions.firestore.document('cities-weathe
 		admin
 			.messaging()
 			.sendToTopic('weather_boston-ma-us', payload)
-			// Not needed to catch() because CloudFuncs will log the error...
+			// Not needed to catch() if all you want is to log the error
+			// because CloudFuncs will log the error...
 			.catch((error) => console.log('FCM failed', error))
 	);
 });
